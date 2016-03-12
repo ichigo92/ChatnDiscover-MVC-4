@@ -38,7 +38,7 @@
 				<!--<input type="text" class="form-control" id="Text2" placeholder="Username" />-->
 @*                <asp:TextBox CssClass="form-control" ID="txtSignUsername" runat="server" placeholder="Username"></asp:TextBox>*@
 			    @Html.EditorFor(model => model.UserName)
-                @Html.ValidationMessageFor(model => model.UserName)
+                @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "alert-danger" })
             </div>
 	</div>
     
