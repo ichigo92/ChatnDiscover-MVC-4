@@ -2,14 +2,138 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+        <title>@ViewBag.Title Cn'D | Chat and Discover</title>
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-        <meta name="viewport" content="width=device-width" />
+        <meta name="viewport" content="width=device-width,  initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Permanent+Marker" />
         @Styles.Render("~/Content/css")
         @Scripts.Render("~/bundles/modernizr")
     </head>
-    <body>
+    <body data-spy="scroll" data-target="#navigation">
+
         <header>
+            <nav class="navbar navbar-fixed-top" id="nav-bar">
+                <div class="container">
+                    <div class="navbar-header">
+                    <div class="navbar-brand" style="padding-top:5px;">
+                        <a href="/"  id="logo_pad"><img src="images/cnd_logo2.png" style="height:50px;" alt="Cnd Logo" /></a>
+                        <!--<a href="/" id="title" >Cn'D</a>-->
+                        <a href="/" class="custom_font" style="text-decoration:none;"><h3 style="display:inline">Cn'D</h3></a>
+                    </div>
+                    <button class="navbar-toggle collapsed" id="nav_response" data-target=".navbar-responsive-collapse" data-toggle="collapse" type="button">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    </div>
+
+                    <div class="navbar-collapse collapse navbar-responsive-collapse" id="navigation">
+                        <ul class="nav navbar-nav custom_font">
+                            <li class="active"><a href="#home"><span class="glyphicon glyphicon-home"></span>&nbsp;Home</a></li>
+                            <li><a href="#features">Features</a></li>
+                            <li><a href="#who_are_we">Who are we??</a></li>                        
+                        </ul><!--end nav-->
+                    
+                    
+                        <!--Login-->
+                        @Html.Partial("_LoginPartial")
+
+                    </div><!--end-nav-collapse collapse-->
+
+                </div><!--end container-->
+            </nav><!--end-navbar navbar-inverse-->
+        </header><!--end-container-->
+        <!--modal window-->
+        <div class="modal fade" id="login_modal">
+            <div class="modal-dialog" style ="width:760px;">
+                <div class="modal-content" id="dialog">
+                    <div class="modal-header">
+                        <button class="close" data-dismiss="modal">&times;</button>
+                    
+                        <!-- Tabs-->
+                        <div class="tabbable">
+                            <ul class="nav nav-pills" style="margin-bottom:10px;">
+                                <li class="active"><a href="#pill1" data-toggle="pill" style="margin:0px 0px;">Login</a></li>
+                                <li><a href="#pill2" data-toggle="pill" style="margin:0px 0px;">Sign Up</a></li>
+                            </ul>
+
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="pill1">
+                                    @Html.Partial("_LoginModal")
+                                </div><!--end tab pane 1-->
+
+                                <div class="tab-pane" id="pill2">
+                                    @Html.Partial("_RegisterModal")
+                                </div><!--end tab pane 2-->
+
+                            </div><!--end tab-content-->
+
+                        </div><!--end tabbable-->
+
+
+                    </div><!--end modal-header-->
+                </div><!--end modal-content-->
+            </div><!--end modal-dialog-->
+        </div><!--end modal fade-->
+        <div>
+            @*@RenderSection("featured", required: false)*@
+            <section class="content-wrapper main-content clear-fix">
+                @RenderBody()
+            </section>
+        </div>
+
+        <footer id="footer">
+            <div class="container">
+			    <div class="row">
+				
+				    <div class="col-sm-2">
+					    <h6>Copyright &copy; 2016 Web Maniax &reg;</h6>
+				    </div><!--end footer-col-sm-2-->
+
+				    <div class="col-sm-4">
+					    <h6>About Us</h6>
+					    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla harum doloremque praesentium voluptas dolorum vero odit? Iure ea maxime accusamus exercitationem accusantium totam, cumque libero, sint magni praesentium debitis natus!</p>
+				    </div><!--end footer-col-sm-4-->
+
+				    <div class="col-sm-2">
+					    <h6>Navigation</h6>
+					    <ul class="unstyled">
+						    <li><a href="#">Home</a></li>
+						    <li><a href="#">About Us</a></li>
+						    <li><a href="#">Login</a></li>
+					    </ul>
+				    </div><!-- end footer-col-sm-6-->
+
+				    <div class="col-sm-2">
+					    <h6>Follow Us</h6>
+					    <ul class="unstyled">
+						    <li><a href="#">Google Plus</a></li>
+						    <li><a href="#">Twitter</a></li>
+						    <li><a href="#">Facebook</a></li>
+					    </ul>
+				    </div><!-- end footer-col-sm-6-->
+
+				    <div class="col-sm-2">
+					    <h6>Coded with <span class="glyphicon glyphicon-heart"></span> by Web Maniax</h6>
+				    </div><!--end footer-col-sm-2-->
+
+			    </div><!--end footer-row-->
+		    </div><!--end footer-container-->
+        </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+       @* <header>
             <div class="content-wrapper">
                 <div class="float-left">
                     <p class="site-title">@Html.ActionLink("your logo here", "Index", "Home")</p>
@@ -40,9 +164,11 @@
                     <p>&copy; @DateTime.Now.Year - My ASP.NET MVC Application</p>
                 </div>
             </div>
-        </footer>
+        </footer>*@
 
         @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @Scripts.Render("~/bundles/jqueryval")
         @RenderSection("scripts", required: false)
     </body>
 </html>

@@ -1,4 +1,4 @@
-﻿@if (Request.IsAuthenticated) {
+﻿@*@if (Request.IsAuthenticated) {
     <text>
         Hello, @Html.ActionLink(User.Identity.Name, "Manage", "Account", routeValues: null, htmlAttributes: new { @class = "username", title = "Manage" })!
         @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" })) {
@@ -10,5 +10,37 @@
     <ul>
         <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
         <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    </ul>
+}*@
+<style>
+   
+</style>
+<!--Login-->
+@if (!Request.IsAuthenticated) {
+    <ul class="nav navbar-nav  navbar-right custom_font">
+        <li><a href="#login_modal" data-toggle="modal"><span class="glyphicon glyphicon-user"></span>&nbsp;Login</a></li>
+    </ul><!--end-login-nav-->
+    
+} else {
+    <ul class="nav navbar-nav navbar-right custom_font">
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+
+            <span class="glyphicon glyphicon-user"></span>&nbsp;Welcome&nbsp;@User.Identity.Name<strong class="caret"></strong></a>
+
+            <ul class="dropdown-menu">
+                <li><a href="Chat.aspx" id="start_chat">Start Chatting!!</a></li>
+                <li><a href="#">Profile</a></li>
+				<li><a href="#">Friend List</a></li>
+				<li class="divider"></li>
+                <li>@using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <a href="javascript:document.getElementById('logoutForm').submit()" id="logout">Log Out</a>
+                    }
+                </li>
+				@*<li><asp:LoginStatus ID="LoginStatus1" runat="server" LogoutAction="Redirect" LogoutText="Log Out" LogoutPageUrl="~/Default.aspx"/></li>*@
+            </ul>
+        </li>
     </ul>
 }

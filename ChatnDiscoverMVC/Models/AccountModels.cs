@@ -25,12 +25,14 @@ namespace ChatnDiscoverMVC.Models
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int UserId { get; set; }
         public string UserName { get; set; }
+        public string FullName { get; set; }
+        public string Email { get; set; }
     }
 
     public class RegisterExternalLoginModel
     {
         [Required]
-        [Display(Name = "User name")]
+        [Display(Name = "Username")]
         public string UserName { get; set; }
 
         public string ExternalLoginData { get; set; }
@@ -58,7 +60,7 @@ namespace ChatnDiscoverMVC.Models
     public class LoginModel
     {
         [Required]
-        [Display(Name = "User name")]
+        [Display(Name = "Username")]
         public string UserName { get; set; }
 
         [Required]
@@ -73,7 +75,16 @@ namespace ChatnDiscoverMVC.Models
     public class RegisterModel
     {
         [Required]
-        [Display(Name = "User name")]
+        [Display(Name = "Full Name", Prompt = "Full Name")]
+        public string FullName { get; set; }
+
+        [Required]
+        [DataType(DataType.EmailAddress)]
+        [Display(Name = "Email", Prompt = "Email")]
+        public string Email { get; set; }
+
+        [Required]
+        [Display(Name = "Username")]
         public string UserName { get; set; }
 
         [Required]
@@ -83,7 +94,7 @@ namespace ChatnDiscoverMVC.Models
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
+        [Display(Name = "Confirm Password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
     }

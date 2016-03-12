@@ -1,0 +1,108 @@
+﻿body {
+    background-image:url(../images/bg_body.jpg);
+    background-repeat:no-repeat;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizelegibility;
+}
+
+body.modal-open { overflow:inherit; padding-right:inherit !important; }
+
+.custom_font {
+    font-family:'Permanent Marker','sans-serif';
+    /*font-size:20px;*/
+    color:black;
+}
+
+li.active > a {
+    /*color:black;*/
+    /*background-color:white;*/
+    color: #FFF;
+    /*border-color: #9A1B1F;*/
+}
+
+ul.nav {
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+    /*border-bottom: 4px solid rgba(131, 0, 0, 0.00);*/
+    transition: all 0.5s ease-in-out 0s;
+}
+
+#loginBtn {
+    margin-top:5px;
+}
+
+.navbar {
+    border-bottom:1px solid rgb(0, 0, 0);
+}
+
+.navbar-toggle {
+    border:1px solid rgba(0, 0, 0, 0.58)
+}
+
+a {
+    color:black;
+}
+
+#logout {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    white-space: nowrap; 
+    font-weight:normal; 
+    line-height:1.42857143;
+}
+
+#logout:focus , #logout:hover
+{
+    color:#262626;
+    text-decoration:none;
+    background-color:#f5f5f5;
+}
+
+.form-group {
+    margin-top:2%;
+}
+
+
+
+#features {
+    background-color:#494848;
+}
+
+#who_are_we {
+    background-color:#15b0e0;
+}
+
+#footer {
+    background-color:#333;
+    color: #eee;
+    font-size: 11px;
+    padding: 20px;
+}
+
+ul.unstyled{
+    list-style: none;
+    padding: 0;
+}
+
+/*section {
+    margin-top:34%;
+}*/
+
+.row {
+    margin-left:0px;
+    margin-right:0px;
+}
+
+.div_intro {
+    margin-top: 150px;
+    margin-bottom: 1.5%;
+}
+
+.div_features {
+    margin:1% 35%;
+}
+
+.div_who_are_we {
+    margin-bottom: 150px;
+}
