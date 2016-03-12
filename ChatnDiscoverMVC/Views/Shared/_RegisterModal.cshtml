@@ -9,58 +9,78 @@
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
-    <div class="form-group" style="height: 38px;">
+    <div class="form-group row" style="height: 38px;">
 @*	    <label class="col-lg-2 control-label" for="inputName">Name</label>*@
         @Html.LabelFor(model => model.FullName, new { @class = "col-lg-3 control-label" })
 		    <div class="col-lg-9">
 			    <!--<input type="text" class="form-control" id="Text1" placeholder="Name" />-->
-                @Html.EditorFor(model => model.FullName)
-                @Html.ValidationMessageFor(model => model.FullName,"", new { @class = "alert-danger" })
+                <div class="col-lg-6">
+                    @Html.EditorFor(model => model.FullName)
+                </div>
+                <div class="col-lg-6">
+                    @Html.ValidationMessageFor(model => model.FullName, "", new { @class = "alert-danger" })
+                </div>
 @*                <asp:TextBox CssClass="form-control" ID="txtSignName" runat="server" placeholder="Name"></asp:TextBox>*@
 		    </div>
     </div>
     
-    <div class="form-group" style="height: 38px;">
+    <div class="form-group row" style="height: 38px;">
 @*	    <label class="col-lg-2 control-label" for="inputEmail">Email</label>*@
         @Html.LabelFor(model => model.Email, new { @class = "col-lg-3 control-label" })
 		    <div class="col-lg-9">
 			    <!--<input type="password" class="form-control" id="Password1" placeholder="Password" />-->
 @*                <asp:TextBox CssClass="form-control" ID="txtSignEmail" runat="server" placeholder="Email"></asp:TextBox>*@
-				@Html.EditorFor(model => model.Email)
-                @Html.ValidationMessageFor(model => model.Email, "", new { @class="alert-danger" })
+                <div class="col-lg-6">
+                    @Html.EditorFor(model => model.Email)
+                </div>
+                <div class="col-lg-6">
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "alert-danger" })
+                </div>
             </div>
     </div>
     
-    <div class="form-group" style="height: 38px;">
+    <div class="form-group row" style="height: 38px;">
 		@*<label class="col-lg-2 control-label" for="inputUsername">Username</label>*@
         @Html.LabelFor(model => model.UserName, new { @class = "col-lg-3 control-label" })
 			<div class="col-lg-9">
 				<!--<input type="text" class="form-control" id="Text2" placeholder="Username" />-->
 @*                <asp:TextBox CssClass="form-control" ID="txtSignUsername" runat="server" placeholder="Username"></asp:TextBox>*@
-			    @Html.EditorFor(model => model.UserName)
-                @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "alert-danger" })
+                <div class="col-lg-6">
+                    @Html.EditorFor(model => model.UserName)
+                </div>
+                <div class="col-lg-6">
+                    @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "alert-danger" })
+                </div>
             </div>
 	</div>
     
-    <div class="form-group" style="height: 38px;">
+    <div class="form-group row" style="height: 38px;">
 		@*<label class="col-lg-2 control-label" for="inputPassword">Password</label>*@
         @Html.LabelFor(model => model.Password, new { @class = "col-lg-3 control-label" })
 			<div class="col-lg-9">
 				<!--<input type="password" class="form-control" id="Password1" placeholder="Password" />-->
                 @*<asp:TextBox CssClass="form-control" TextMode="Password" ID="txtSignPassword" runat="server" placeholder="Password"></asp:TextBox>*@
-				@Html.EditorFor(model => model.Password)
-                @Html.ValidationMessageFor(model => model.Password, "", new { @class="alert-danger" })
+                <div class="col-lg-6">
+                    @Html.EditorFor(model => model.Password)
+                </div>
+                <div class="col-lg-6">
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "alert-danger" })
+                </div>
             </div>
 	</div>
     
-    <div class="form-group" style="height: 76px;">
+    <div class="form-group row" style="height: 76px;">
 		@*<label class="col-lg-2 control-label" for="inputConfirmPassword">Confirm Password</label>*@
         @Html.LabelFor(model => model.ConfirmPassword, new { @class = "col-lg-3 control-label" })
 			<div class="col-lg-9">
 				<!--<input type="password" class="form-control" id="Password1" placeholder="Password" />-->
                 @*<asp:TextBox CssClass="form-control" style="padding-right: 0px;" TextMode="Password" ID="txtSignConfirmPassword" runat="server" placeholder="Confirm Password"></asp:TextBox>*@
-				@Html.EditorFor(model => model.ConfirmPassword)
-                @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class="alert-danger" })
+                <div class="col-lg-6">
+                    @Html.EditorFor(model => model.ConfirmPassword)
+                </div>
+                <div class="col-lg-6">
+                    @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "alert-danger" })
+                </div>
                 <!--<button class="btn btn-success pull-right" type="submit">Send!</button>-->
                 @*<asp:Button CssClass="btn btn-success pull-right" style="margin-top: 5px;" ID="signupBtn" runat="server" Text="Send!" OnClick="InsertUser" />*@
                 <button class="btn btn-success pull-right" style="margin-top: 20px;" type="submit" value="Create">Register!!!</button>
