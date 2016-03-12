@@ -60,12 +60,12 @@ namespace ChatnDiscoverMVC.Models
     public class LoginModel
     {
         [Required]
-        [Display(Name = "Username")]
+        [Display(Name = "Username", Prompt = "Username")]
         public string UserName { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Password", Prompt = "Password")]
         public string Password { get; set; }
 
         [Display(Name = "Remember me?")]
@@ -84,17 +84,17 @@ namespace ChatnDiscoverMVC.Models
         public string Email { get; set; }
 
         [Required]
-        [Display(Name = "Username")]
+        [Display(Name = "Username", Prompt = "Username")]
         public string UserName { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Password", Prompt = "Password")]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm Password")]
+        [Display(Name = "Confirm Password", Prompt = "Confirm Password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
     }
